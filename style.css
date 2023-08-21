@@ -1,0 +1,111 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-transform: capitalize;
+    text-decoration: none;
+}
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background:rgb(0, 0, 0,0.5);
+    box-shadow: 0 5px 10px black;
+    padding: 20px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+header .logo{
+    font-weight: bolder;
+    font-size: 30px;
+    color: #ffffff;
+}
+header .navbar ul{
+list-style: none;
+}
+header .navbar ul li{
+    position: relative;
+    float: left;
+
+}
+.navbar ul li a{
+    font-size: 20px;
+    padding: 20px;
+    color: #fff;
+    display: block;
+    
+}
+.navbar ul li a:hover{
+    background: #3333;
+    color: black;
+}
+.navbar ul li ul{
+    position: absolute;
+    left: 0;
+    width: 200px;
+    background: rgba(112, 108, 108, 0.664);
+    display: none;
+}
+.navbar ul li ul li{
+    width: 100%;
+    
+}
+.navbar ul li ul li ul{
+    left: 200px;
+    top: 0;
+}
+.navbar ul li:focus-within >ul,
+.navbar ul li:hover > ul{
+    display: initial;
+}
+#menu-bar{
+    display: none;
+}
+header label{
+    font-size: 20px;
+    color: #ffff;
+    cursor: pointer;
+    display: none;
+}
+@media(max-width:991px){
+    header{
+        padding: 20px;
+    }
+    header label{
+        display: initial;
+    }
+    .navbar{
+        position: absolute;
+        top: 100%;
+        left: 0;right: 0;
+        background:rgba(0,0,0,0.5);
+        border-top: 1px solid black;
+        display: none;
+    }
+    .navbar ul li{
+        width: 100%;
+        background-color: red;
+    }
+    .navbar ul li:hover{
+       background-color: gray;
+       
+    }
+    .navbar ul li ul{
+        position: relative;
+        width: 100%;
+        cursor: pointer;
+    }
+    .navbar ul li ul li{
+        background: #7978789c;
+    }
+    .navbar ul li ul li ul{
+        width: 100%;
+        left: 0;
+    }
+    #menu-bar:checked~.navbar{
+        display: initial;
+    }
+}
